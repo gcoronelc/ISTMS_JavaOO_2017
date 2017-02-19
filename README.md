@@ -41,6 +41,11 @@
 - Código fuente: https://goo.gl/GRaOQg
 
 
+# ÉNSANDO EN SERVICIOS
+
+- Parte 1: http://gcoronelc.blogspot.pe/2016/11/programando-pensando-en-servicios-parte.html
+- Parte 2: http://gcoronelc.blogspot.pe/2016/11/prog-pensando-en-servicios-parte-2.html
+
 # RECURSOS DEL CURSO
 
 - Recursos: https://github.com/gcoronelc/recursos
