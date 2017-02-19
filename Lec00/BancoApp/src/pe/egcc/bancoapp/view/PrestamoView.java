@@ -5,6 +5,8 @@
  */
 package pe.egcc.bancoapp.view;
 
+import pe.egcc.bancoapp.service.BancoService;
+
 /**
  *
  * @author Manuel Seoane
@@ -117,10 +119,25 @@ public class PrestamoView extends javax.swing.JFrame {
     jPanel3.setBorder(javax.swing.BorderFactory.createTitledBorder(null, "ACCIONES", javax.swing.border.TitledBorder.DEFAULT_JUSTIFICATION, javax.swing.border.TitledBorder.ABOVE_TOP));
 
     btnProcesar.setText("Procesar");
+    btnProcesar.addActionListener(new java.awt.event.ActionListener() {
+      public void actionPerformed(java.awt.event.ActionEvent evt) {
+        btnProcesarActionPerformed(evt);
+      }
+    });
 
     btnLimpiar.setText("Limpiar");
+    btnLimpiar.addActionListener(new java.awt.event.ActionListener() {
+      public void actionPerformed(java.awt.event.ActionEvent evt) {
+        btnLimpiarActionPerformed(evt);
+      }
+    });
 
     btnCerrar.setText("Cerrar");
+    btnCerrar.addActionListener(new java.awt.event.ActionListener() {
+      public void actionPerformed(java.awt.event.ActionEvent evt) {
+        btnCerrarActionPerformed(evt);
+      }
+    });
 
     javax.swing.GroupLayout jPanel3Layout = new javax.swing.GroupLayout(jPanel3);
     jPanel3.setLayout(jPanel3Layout);
@@ -171,6 +188,30 @@ public class PrestamoView extends javax.swing.JFrame {
 
     pack();
   }// </editor-fold>//GEN-END:initComponents
+
+  private void btnCerrarActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnCerrarActionPerformed
+    System.exit(0);
+  }//GEN-LAST:event_btnCerrarActionPerformed
+
+  private void btnLimpiarActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnLimpiarActionPerformed
+    txtCapital.setText("");
+    txtTasa.setText("");
+    txtPeriodos.setText("");
+    txtImporte.setText("");
+    txtCapital.requestFocus();
+  }//GEN-LAST:event_btnLimpiarActionPerformed
+
+  private void btnProcesarActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnProcesarActionPerformed
+    // Datos
+    double capital = Double.parseDouble(txtCapital.getText());
+    double tasa = Double.parseDouble(txtTasa.getText());
+    int n = Integer.parseInt(txtPeriodos.getText());
+    // Proceso
+    BancoService service = new BancoService();
+    double importe = service.calcularImporte(capital, tasa, n);
+    // Reporte
+    txtImporte.setText(String.valueOf(importe));
+  }//GEN-LAST:event_btnProcesarActionPerformed
 
   /**
    * @param args the command line arguments

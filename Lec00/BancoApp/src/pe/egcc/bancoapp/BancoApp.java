@@ -1,9 +1,11 @@
 package pe.egcc.bancoapp;
 
+import pe.egcc.bancoapp.view.PrestamoView;
+
 public class BancoApp {
 
     public static void main(String[] args) {
-      System.out.println("Hola");
+      PrestamoView.main(args);
     }
     
 }
