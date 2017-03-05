@@ -1,0 +1,5 @@
+Bernanrdo: 18
+Lopez:     14
+Orellana:  16
+Gonzales:  13
+Corilla:   12
